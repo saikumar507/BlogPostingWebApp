@@ -1,0 +1,19 @@
+<%- include('header') -%>
+<div class="items">
+<h1><%= items[0].heading%></h1>
+<p><%= items[0].value%></p>
+
+<%for(var i=1;i<items.length;i++) {%>
+    
+        <h1> <%= items[i].heading %> </h1>
+  <%      if(items[i].value.length<=100){ %>
+                <p> <%= items[i].value %> ...  <a href="/posts/<%= items[i].heading %>">read more</a> </p>
+       <% }      else{%>
+                <p> <%= items[i].value.substr(0,100) %> ... <a href="/posts/<%= items[i].heading %>">read more</a></p>
+   <%     }%>
+        
+<%}%>
+<div class="btn btn-lg btn-primary"><a class="add-post" href="/compose">Add Post</a></div>
+    </div>
+
+<%- include('footer') -%>

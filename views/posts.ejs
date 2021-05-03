@@ -1,0 +1,13 @@
+<%- include('header') -%>
+<div class="items">
+    <div class="posts">
+        <h1><%= item.heading %></h1>
+    <p><%= item.value%></p>
+    </div>
+    <div class="deletePost">
+        <form action="/delete" method="post">
+            <button type="submit" name="button" class="btn btn-primary" value=<%= item._id %> >Delete Item</button>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>
